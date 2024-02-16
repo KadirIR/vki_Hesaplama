@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js.css">
+    <title>Document</title>
+</head>
+<body>
+   
+   
+    <form action="#" method="post">
+        <label for="Kilo">Kilo(kg)</label>
+        <input type="text" id="Kilo" name="Kilo" required>
+        <br>
+        <label for="boy">Boy(M)</label>
+        <input type="text" id="boy" name="boy" required>
+        <br>
+        <input type="button" value="VKİ HESAPLA" onclick="hesaplama()">
+        <br>
+        <br>
+       
+        <label for="vki">VKİ DEGERİNİZ</label>
+       
+        <input type="text" id="vki" name="vki" required>
+        <br>
+        
+        <label for="Sonuc">Sonuc</label>
+        <input type="text" id="sonuc" name="sonuc" required>
+        <br>
+        <input type="reset" value="Reset">
+    </form>
+ 
+ 
+    <script>
+        function hesaplama() {
+            var sonuc;
+            var kilo = (document.getElementById("Kilo").value);
+            var boy = (document.getElementById("boy").value);
+            var VKI;
+            if (kilo != "" && boy != "") {
+                VKI = kilo /(boy*boy);
+                if (VKI <= 18.5) {
+                    sonuc = "zayıfsın yemek ye";
+                } else if (VKI > 18.5 && VKI <= 25) {
+                    sonuc = "ideal iyi kilo";
+                } else if (VKI > 25) {
+                    sonuc = "Kilolusun diyete basla";
+                }
+               
+                document.getElementById("vki").value = VKI;
+               
+                document.getElementById("sonuc").value = sonuc;
+        }
+    }
+ 
+    </script>
+
+ 
+</body>
+</html>
